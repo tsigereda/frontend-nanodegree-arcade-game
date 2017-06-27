@@ -65,7 +65,7 @@ Player.prototype.handleInput = function (key){
                 this.y -=83;  
                
                 alert("Congrats - This move lets you get to the safe zone!");                 
-                restart();      
+                this.restart();      
                 break;
              }
 
@@ -105,7 +105,7 @@ var logging = function(){
          console.log("player is at" + Math.abs(player.x) + "," + player.y);
 }
 
-var restart = function(){
+Player.prototype.restart = function(){
    var response = prompt("do you want to play again? Type Y if you want to continue playing or N otherwise");
    if(response === "Y" || response === "y") player.reset();
 }
